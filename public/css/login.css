@@ -1,10 +1,10 @@
 body{
-    background-color: #E6FAFF;
+    background-color: #fff;
 }
 form{
     width: 379px;
     height: 500px;
-    background-color: #fff;
+    background-color: #223F61;
     margin: auto;
     margin-top: 160px;
     border-radius: 20px;
@@ -17,6 +17,7 @@ h1{
     font-family:'Montserrat', sans-serif;
     text-align: center;
     font-size: 43px;
+    color: #ff5f00;
 }
 .google-icon{
     height: 38px;
@@ -31,8 +32,8 @@ button{
     margin-left: 20px;
     font-family: 'montserrat',sans-serif;
     border-radius: 16px;
-    color: #fff;
-    background-color: #00576A;
+    color: #000;
+    background-color: #fff;
     display:flex;
     border: none;
 }
@@ -45,6 +46,7 @@ p{
     margin-top: 40px;
     margin-left: 48%;
     font-family:'Montserrat', sans-serif;
+    color: #fff;
     
 }
 
@@ -55,10 +57,10 @@ p{
     font-family: 'montserrat',sans-serif;
     border-radius: 16px;
     color: #fff;
-    background-color: #00576A;
+    background-color: #fff;
     margin-left: 20px;
     height: 42px;
-    color: #fff;
+    color: #000;
     text-align: center;
     border: none;
 }
@@ -68,7 +70,7 @@ p{
     width: 163px;
     height: 44px;
     border-radius:16px ;
-    background-color:#0085A3 ;
+    background-color:#ff5f00 ;
     color: #fff;
     border: none;
 }
