@@ -1,3 +1,5 @@
+
+//LOGICA DE LOS BOTONES DE CANTIDAD DE PRODUCTO:
 let cantidad=0
 
 const botonSubir = document.getElementById('b-mas');
@@ -105,3 +107,115 @@ botonBajar6.addEventListener('click',()=>{
         mostrar6.textContent=cantidad6;
     }
 });
+
+let cantidad7=0
+
+const botonSubir7=document.getElementById('b-mas-7');
+const botonBajar7=document.getElementById('b-menos-7');
+const mostrar7=document.getElementById('cantidad-7');
+
+botonSubir7.addEventListener('click',() =>{
+    cantidad7++;
+    mostrar7.textContent=cantidad7;
+});
+
+botonBajar7.addEventListener('click',() =>{
+    if(cantidad7 > 0){
+        cantidad7--;
+        mostrar7.textContent=cantidad7;
+    }
+});
+
+let cantidad8=0
+
+const botonSubir8=document.getElementById('b-mas-8');
+const botonBajar8=document.getElementById('b-menos-8');
+const mostrar8=document.getElementById('cantidad-8');
+
+botonSubir8.addEventListener('click',()=>{
+    cantidad8++;
+    mostrar8.textContent=cantidad8;
+});
+
+botonBajar8.addEventListener('click',()=>{
+    if(cantidad8 > 0){
+        cantidad8--;
+        mostrar8.textContent=cantidad8;
+    }
+}); 
+
+let cantidad9=0
+
+const botonSubir9=document.getElementById('b-mas-9');
+const botonBajar9=document.getElementById('b-menos-9');
+const mostrar9=document.getElementById('cantidad-9');
+
+botonSubir9.addEventListener('click',()=>{
+    cantidad9++;
+    mostrar9.textContent=cantidad9;
+});
+
+botonBajar9.addEventListener('click',()=>{
+    if(cantidad9 > 0){
+        cantidad9--;
+        mostrar9.textContent=cantidad9;
+    }
+});
+
+
+let cantidad10=0
+
+const botonSubir10=document.getElementById('b-mas-10');
+const botonBajar10=document.getElementById('b-menos-10');
+const mostrar10=document.getElementById('cantidad-10');
+
+botonSubir10.addEventListener('click',()=>{
+    cantidad10++;
+    mostrar10.textContent=cantidad10;
+});
+
+botonBajar10.addEventListener('click',()=>{
+    if(cantidad10 > 0){
+        cantidad10--;
+        mostrar10.textContent=cantidad10;
+    }
+});
+
+let cantidad11=0
+
+const botonSubir11=document.getElementById('b-mas-11');
+const botonBajar11=document.getElementById('b-menos-11');
+const mostrar11=document.getElementById('cantidad-11');
+
+botonSubir11.addEventListener('click',()=>{
+    cantidad11++;
+    mostrar11.textContent=cantidad11;
+});
+
+botonBajar11.addEventListener('click',()=>{
+    if(cantidad11 > 0){
+        cantidad11--;
+        mostrar11.textContent=cantidad11;
+    }
+});
+
+
+let cantidad12=0
+
+const botonSubir12=document.getElementById('b-mas-12');
+const botonBajar12=document.getElementById('b-menos-12');
+const mostrar12=document.getElementById('cantidad-12');
+
+botonSubir12.addEventListener('click',()=>{
+    cantidad12++;
+    mostrar12.textContent=cantidad12;
+});
+
+botonBajar12.addEventListener('click',()=>{
+    if(cantidad12 > 0){
+        cantidad12--;
+        mostrar12.textContent=cantidad12;
+    }
+});
+
+//LOGICA DE REGISTER_LOGIN USUARIO
