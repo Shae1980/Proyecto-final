@@ -2,10 +2,8 @@
     margin: 0;
 
 }
-body{
-    box-sizing: border-box;
+.body{
     background-color: #1a1f1e;
-    font-family: "Roboto Condensed", sans-serif;
 }
 .fondo{
     width: 100%;
@@ -32,14 +30,17 @@ ul{
     position: fixed;
 }
 
+ul > li > a  {
+    text-decoration: none;
+    color: #fff;
+}
+
 a{
     text-decoration: none;
     color: #fff;
     transition: all 1s;
 }
-a:hover{
-    color: #FF5F00;
-}
+
 #logo{
     width: 130px;
     height: 120px;
@@ -56,8 +57,13 @@ a:hover{
 
 }
 .register , .login{
-    margin-top: 5px
+    margin-top: 5px;
 }
+.a-2{
+    text-decoration: none;
+    color: #fff;
+}
+
 .nav-items-register{
     margin-left: 20px;
     
@@ -65,7 +71,7 @@ a:hover{
 .nav-items-login{
     margin-right: 50px;
 }
-.nav-items-sobre{
+.nav-items-inicio{
     margin-left: 170px;
 }
 .RL{
@@ -102,43 +108,47 @@ h1{
     position: absolute;
     margin-top: 100px;
     font-size: 45px;
-    color: #00576A;
+    color: #FF5F00;
 
 }
 .button-c{
     height: 40px;
     width: 200px;
     position: absolute;
-    margin-top: 700px;
-    margin-left: 160px;
     background-color: #FF5F00;
     display: flex;
     justify-content: center;
     border-radius: 10px;
-    
+    margin-top: 330px;
 
-    
 }
 
 .p-catalogo{
-    margin-top: 10px;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #fff;
 }
 
+.p-catalogo:hover{
+    color: #1a1a1a;
+}
 
 .catalogo-tema{
     margin-top: 200px;
     margin-left: 40%;
+    display: flex;
 }
 #catalogo-p{
     font-size: 100px;
     color: #FF5F00;
 }
 .products-1{
-    width: 279px;
+    width: 300px;
+    max-width: 280px;
     height: 390px;
     background-color: transparent;
     margin-top: 120px;
-    margin-left: 100px;
+    margin-left: 0px;
     border-radius: 15px;
     margin-bottom: 50px;
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
@@ -148,14 +158,23 @@ h1{
     backdrop-filter: blur(8px);
 }
 
-.img-p , .img-p-2, .img-p-3, .img-p-4, .img-p-5, .img-p-6, .img-p-7, .img-p-8, .img-p-9, .img-p-10, .img-p-11, .img-p-12{
+.img-p-2, .img-p-3, .img-p-4, .img-p-5, .img-p-6, .img-p-7, .img-p-8, .img-p-9, .img-p-10, .img-p-11, .img-p-12{
     width: 210px;
     height:135px ;
     background-color: #d9d9d9;
     border-radius: 15px;
-    margin-left:6%;
+    margin-left:1.5%;
     margin-top: 20px;
-    
+    position: absolute;
+}
+.img-p{
+    width: 215px;
+    height:135px ;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    margin-left:7%;
+    margin-top: 20px;
+    position: absolute;
 }
 .precio{
     background-color: #FF5F00;
@@ -163,14 +182,19 @@ h1{
     height: 23px;
     border-radius: 10px;
     text-align: center;
-    margin-left: 120px;
-    margin-top: 12px;
+    margin-left: 65%;
+    margin-top: 15px;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
+.Categoría{
+    margin-left:5%;
+    position: absolute;
+}
 .padre-p-c{
     width: 200px;
     height: 30px;
@@ -181,25 +205,28 @@ h1{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: 80%;
     margin-top: 44px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    position: absolute;
+    margin-top: 215px;
 }
 #b-menos{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: 80%;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    position: absolute;
+    margin-top: 265px;
 }
 .img-b-mas{
     width: 24px;
@@ -212,26 +239,28 @@ h1{
     
 }
 .enviar-carrito{
-    width:85%;
+    width:310px;
+    max-width:230px;
     height: 40px;
     border-radius: 16px;
     border: none;
     background-color: #FF5F00;
     color: #fff;
-    margin-top: 165px;
-    margin-left: 15px;
+    margin-top: 310px;
+    margin-left: 6px;
+    position: absolute;
 }
 
 .padre-producto{
-    display: flex;
     margin-right: 80px;
 }
 .products-1-1{
-    width: 279px;
+    width: 300px;
+    max-width: 280px;
     height: 390px;
     background-color: transparent;
     margin-top: 120px;
-    margin-left: 100px;
+    margin-left: 0px;
     border-radius: 15px;
     margin-bottom: 50px;
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
@@ -244,6 +273,7 @@ width: 200px;
 height: 30px;
 margin-top: 140px;
 color: #d9d9d9;
+position: absolute;
 }
 .precio-2{
     background-color: #FF5F00;
@@ -251,301 +281,319 @@ color: #d9d9d9;
     height: 23px;
     border-radius: 10px;
     text-align: center;
-    margin-left: 120px;
-    margin-top: 12px;
+    margin-left: 65%;
+    margin-top: 15px;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+}
+.precio-number{
+    margin-top: 12px;
 }
 #b-mas-2{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-left: auto;
+    margin-top: 215px;
 }
 #b-menos-2{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 36px;
+    margin-left: auto;
 
 }
 #b-mas-3{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-left: auto;
+    margin-top: 215px;
 }
 #b-menos-3{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 36px;
+    margin-left: auto;
 
 }
 #b-mas-4{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
+    
 }
 #b-menos-4{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-5{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-5{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-6{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-6{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-7{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-7{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-8{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-8{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-9{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-9{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-10{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-10{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-11{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-11{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 #b-mas-12{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     margin-top: 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 215px;
 }
 #b-menos-12{
     width: 30px;
     height: 17px;
     background-color: #00576A;
-    margin-left: 180px;
+    margin-left: auto;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    margin-top: 36px;
 }
 .enviar-carrito-2{
-    margin-top: 130px;
-    width:95%;
+    width:310px;
+    max-width:230px;
     height: 40px;
     border-radius: 16px;
     border: none;
     background-color: #FF5F00;
     color: #fff;
+    margin-top: 310px;
+    margin-left: 6px;
+    position: absolute;
+    white-space: nowrap;
 }
 .padre-producto-2{
-    display: flex;
     margin-right: 80px;
 }
 .padre-producto-3{
-    display: flex;
+    
     margin-right: 80px;
 }
 
-.ubicacion{
-    margin-left: 140px;
-    width: 90%;
-    margin-bottom: 100px;
-    
-}
+
 #Ubicación{
     font-size: 96px;
     color: #FF5F00;
@@ -584,18 +632,29 @@ iframe{
     margin-top: 30px;
 }
 
-.card {
-    background:transparent;
+.card{
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(173, 173, 173, 0.1);
     width: 280px;
     box-sizing: border-box;
     transition: all 0.3s ease;
-    backdrop-filter: blur(16px);
-    color: #d9d9d9;
+    
+    color: #fff;
 }
-.hh{
+.card{
+    align-items: center;
+    
+}
+.card:hover{
+    background:transparent;
+    color: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    backdrop-filter: blur(26px);
+
+}
+#hh{
     font-size: 66px;
     color: #FF5F00;
 }
@@ -610,100 +669,165 @@ iframe{
     color: #FF5F00; 
 }
 
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
 .h{
 font-size: 50px;
-margin-top: 1px;
-margin-left: 20px;
+margin-bottom: 200px;
+margin-left: 15px;
+
 }
 
 
 .card-principal{
     width: 500px;
-    height: 310px;
+    max-width:485px;
+    height: 460px;
     position: absolute;
     display: flex;
     justify-content: center;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
-    margin-top: 330px;
-    margin-left: 30px;
+    backdrop-filter: blur(20px);
+    margin-top: 290px;
+    margin-left: 20px;
     align-items: center;
 }
 
 #cantidad {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 235px;
+    margin-top: 233px;
+    position: absolute;
 }
 #cantidad-2 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-3 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-4 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-5 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-6 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-7 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-8 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-9 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-10 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-11 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
 #cantidad-12 {
     color: #fff;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 12px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
 }
+
+#footer{
+    background-color: #1a1a1a;
+    width: 100%;
+    height: 230px;
+    position: relative;
+    
+}
+
+.footer-item-1{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    margin-top: 70px;
+    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+    
+}
+iframe{
+    margin-top: 0;
+    margin-left: 0;
+}
+.footer-item-2{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    margin-top: 70px;
+    margin-left: 35%;
+    
+}
+.footer-item-3{
+    width: 100px;
+    height: 100px;
+    background-color: #00576A;
+    position: absolute;
+    display: flex;
+    margin-top: 70px;
+    margin-left: 58%;
+    
+}
+.footer-item-4{
+    width: 100px;
+    height: 100px;
+    background-color: #00576A;
+    position: absolute;
+    display: flex;
+    margin-top: 70px;
+    margin-left:83%;
+    
+}
+
