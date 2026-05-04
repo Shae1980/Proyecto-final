@@ -218,4 +218,219 @@ botonBajar12.addEventListener('click',()=>{
     }
 });
 
+let cantidad13=0
+
+const botonSubir13=document.getElementById('b-mas-13');
+const botonBajar13=document.getElementById('b-menos-13');
+const mostrar13=document.getElementById('cantidad-13');
+
+botonSubir13.addEventListener('click',()=>{
+    cantidad13++;
+    mostrar13.textContent=cantidad13;
+});
+
+botonBajar13.addEventListener('click',()=>{
+    if(cantidad13 > 0){
+        cantidad13--;
+        mostrar13.textContent=cantidad13;
+    }
+});
+
+let cantidad14=0
+
+const botonSubir14=document.getElementById('b-mas-14');
+const botonBajar14=document.getElementById('b-menos-14');
+const mostrar14=document.getElementById('cantidad-14');
+
+botonSubir14.addEventListener('click',()=>{
+    cantidad14++;
+    mostrar14.textContent=cantidad14;
+});
+
+botonBajar14.addEventListener('click',()=>{
+    if( cantidad14 > 0){
+        cantidad14--;
+        mostrar14.textContent=cantidad14;
+    }
+});
+
+let cantidad15=0
+
+const botonSubir15=document.getElementById('b-mas-15');
+const botonBajar15=document.getElementById('b-menos-15');
+const mostrar15=document.getElementById('cantidad-15');
+
+botonSubir15.addEventListener('click',()=>{
+    cantidad15++;
+    mostrar15.textContent=cantidad15;
+});
+
+botonBajar15.addEventListener('click',()=>{
+    if( cantidad15 > 0){
+        cantidad15--;
+        mostrar15.textContent=cantidad15;
+    }
+});
+
+let cantidad16=0
+
+const botonSubir16=document.getElementById('b-mas-16');
+const botonBajar16=document.getElementById('b-menos-16');
+const mostrar16=document.getElementById('cantidad-16');
+
+botonSubir16.addEventListener('click',()=>{
+    cantidad16++;
+    mostrar16.textContent=cantidad16;
+});
+
+botonBajar16.addEventListener('click',()=>{
+    if( cantidad16 > 0){
+        cantidad16--;
+        mostrar16.textContent=cantidad16;
+    }
+});
+
+let cantidad17=0
+
+const botonSubir17=document.getElementById('b-mas-17');
+const botonBajar17=document.getElementById('b-menos-17');
+const mostrar17=document.getElementById('cantidad-17');
+
+botonSubir17.addEventListener('click',()=>{
+    cantidad17++;
+    mostrar17.textContent=cantidad17;
+});
+
+botonBajar17.addEventListener('click',()=>{
+    if( cantidad17 > 0){
+        cantidad17--;
+        mostrar17.textContent=cantidad17;
+    }
+});
+
+let cantidad18=0
+
+const botonSubir18=document.getElementById('b-mas-18');
+const botonBajar18=document.getElementById('b-menos-18');
+const mostrar18=document.getElementById('cantidad-18');
+
+botonSubir18.addEventListener('click',()=>{
+    cantidad18++;
+    mostrar18.textContent=cantidad18;
+});
+
+botonBajar18.addEventListener('click',()=>{
+    if( cantidad18 > 0){
+        cantidad18--;
+        mostrar18.textContent=cantidad18;
+    }
+});
+
+let cantidad19=0
+
+const botonSubir19=document.getElementById('b-mas-19');
+const botonBajar19=document.getElementById('b-menos-19');
+const mostrar19=document.getElementById('cantidad-19');
+
+botonSubir19.addEventListener('click',()=>{
+    cantidad19++;
+    mostrar19.textContent=cantidad19;
+});
+
+botonBajar19.addEventListener('click',()=>{
+    if( cantidad19 > 0){
+        cantidad19--;
+        mostrar19.textContent=cantidad19;
+    }
+});
+
+let cantidad20=0
+
+const botonSubir20=document.getElementById('b-mas-20');
+const botonBajar20=document.getElementById('b-menos-20');
+const mostrar20=document.getElementById('cantidad-20');
+
+botonSubir20.addEventListener('click',()=>{
+    cantidad20++;
+    mostrar20.textContent=cantidad20;
+});
+
+botonBajar20.addEventListener('click',()=>{
+    if( cantidad20 > 0){
+        cantidad20--;
+        mostrar20.textContent=cantidad20;
+    }
+});
+
+let cantidad21=0
+
+const botonSubir21=document.getElementById('b-mas-21');
+const botonBajar21=document.getElementById('b-menos-21');
+const mostrar21=document.getElementById('cantidad-21');
+
+botonSubir21.addEventListener('click',()=>{
+    cantidad21++;
+    mostrar21.textContent=cantidad21;
+});
+
+botonBajar21.addEventListener('click',()=>{
+    if( cantidad21 > 0){
+        cantidad21--;
+        mostrar21.textContent=cantidad21;
+    }
+});
+
+let cantidad22=0
+
+const botonSubir22=document.getElementById('b-mas-22');
+const botonBajar22=document.getElementById('b-menos-22');
+const mostrar22=document.getElementById('cantidad-22');
+
+botonSubir22.addEventListener('click',()=>{
+    cantidad22++;
+    mostrar22.textContent=cantidad22;
+});
+
+botonBajar22.addEventListener('click',()=>{
+    if( cantidad22 > 0){
+        cantidad22--;
+        mostrar22.textContent=cantidad22;
+    }
+});
+
+let cantidad23=0
+
+const botonSubir23=document.getElementById('b-mas-23');
+const botonBajar23=document.getElementById('b-menos-23');
+const mostrar23=document.getElementById('cantidad-23');
+
+botonSubir23.addEventListener('click',()=>{
+    cantidad23++;
+    mostrar23.textContent=cantidad23;
+});
+
+botonBajar23.addEventListener('click',()=>{
+    if( cantidad23 > 0){
+        cantidad23--;
+        mostrar23.textContent=cantidad23;
+    }
+});
+
+let cantidad24=0
+
+const botonSubir24=document.getElementById('b-mas-24');
+const botonBajar24=document.getElementById('b-menos-24');
+const mostrar24=document.getElementById('cantidad-24');
+
+botonSubir24.addEventListener('click',()=>{
+    cantidad24++;
+    mostrar24.textContent=cantidad24;
+});
+
+botonBajar24.addEventListener('click',()=>{
+    if( cantidad24 > 0){
+        cantidad24--;
+        mostrar24.textContent=cantidad24;
+    }
+});
 //LOGICA DE REGISTER_LOGIN USUARIO
