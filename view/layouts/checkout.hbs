@@ -1,0 +1,133 @@
+{{!
+    PÁGINA PARA LLENAR LOS DATOS DE COMPRA (checkout.hbs)
+    
+    Acá pongo el formulario para que el cliente escriba su dirección y método de pago.
+    También uso un pequeño script de JavaScript abajo para:
+    1. Traer los productos que agregó al carrito desde el localStorage.
+    2. Sumar el dinero total de la compra.
+    3. Meter el total y la lista de productos en unos inputs escondidos (hidden) para mandárselos a Express.
+    4. Borrar el carrito del navegador una vez que confirme la compra.
+}}
+
+{{>head}} {{! Traigo el partial del head con mis estilos y fuentes }}
+
+<body class="checkout-body">
+    <!-- Formulario que manda un POST a la ruta /checkout al confirmar la orden -->
+    <form class="checkout-form" action="/checkout" method="POST">
+
+        <!-- SECCIÓN 1: Datos de contacto del comprador -->
+        <h1 class="checkout-titulo">Datos personales</h1>
+        
+        <!-- Rejilla de Bootstrap para colocar Nombre y Apellido uno al lado del otro -->
+        <div class="row g-2">
+            <div class="col-md-6">
+                <input class="input-1" type="text" name="nombre_cliente" placeholder="Nombre" required>
+            </div>
+            <div class="col-md-6">
+                <input class="input-apellido" type="text" name="apellido" placeholder="Apellido completo" required>
+            </div>
+        </div>
+        <input class="input-2" type="tel" name="telefono" placeholder="Teléfono" required>
+
+        <!-- SECCIÓN 2: Dirección física para el envío -->
+        <h1 class="checkout-titulo">Dirección de entrega</h1>
+        <input class="input-3" type="text" name="calle" placeholder="Calle" required>
+        <input class="input-4" type="text" name="sector" placeholder="Sector" required>
+        <input class="input-5" type="text" name="num_casa" placeholder="Número de casa" required>
+
+        <!-- SECCIÓN 3: Método de pago -->
+        <h1 class="checkout-titulo">Método de pago</h1>
+        <select class="input-6" name="metodo_pago" required>
+            <option value="">Selecciona un método</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta</option>
+            <option value="transferencia">Transferencia</option>
+        </select>
+
+        {{!
+            INPUTS ESCONDIDOS (HIDDEN INPUTS):
+            Son sumamente importantes para poder enviarle al servidor Express datos generados desde 
+            JavaScript en el navegador, como el total de dinero y la lista de productos del carrito.
+        }}
+        <!-- Mandamos el total de dinero calculado en el script de abajo -->
+        <input type="hidden" name="total" id="total-input">
+
+        <!-- Mandamos la lista de productos en formato de texto JSON -->
+        <input type="hidden" name="carrito" id="carrito-input">
+
+        <!-- Visor visual para mostrar el total de dinero al cliente -->
+        <h2 class="checkout-titulo" style="color: #ff6600; margin-top: 20px; font-size: 24px;">
+            Total a pagar: RD$ <span id="total-mostrar">0</span>
+        </h2>
+
+        <!-- Botón para finalizar y mandar la orden -->
+        <button class="checkout-btn">Confirmar pedido</button>
+
+    </form>
+
+    <!-- SCRIPT DE JAVASCRIPT EN EL NAVEGADOR -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Traigo los productos guardados en el carrito
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            
+            // 2. Sumo los precios quitando los caracteres raros para calcular el total general de la compra
+            let total = 0;
+            carrito.forEach(item => {
+                const precio = parseInt(item.precio.replace(/[^0-9]/g, '')); // Quita letras (ej: 'RD$350' a '350')
+                total += precio * item.cantidad; // Multiplica precio por cantidad y los suma
+            });
+            
+            // 3. Meto el total de dinero al visor visual y al input escondido para mandarlo al servidor
+            document.getElementById('total-mostrar').textContent = total.toLocaleString();
+            document.getElementById('total-input').value = total;
+
+            // 4. Convierto la lista de productos a texto JSON y la meto en mi input escondido de carrito
+            document.getElementById('carrito-input').value = JSON.stringify(carrito);
+
+            // 5. Al confirmar la compra enviamos los datos en formato JSON usando fetch
+            const form = document.querySelector('.checkout-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const payload = {
+                        nombre_cliente: form.querySelector('[name="nombre_cliente"]').value,
+                        apellido: form.querySelector('[name="apellido"]').value,
+                        telefono: form.querySelector('[name="telefono"]').value,
+                        calle: form.querySelector('[name="calle"]').value,
+                        sector: form.querySelector('[name="sector"]').value,
+                        num_casa: form.querySelector('[name="num_casa"]').value,
+                        metodo_pago: form.querySelector('[name="metodo_pago"]').value,
+                        total: total,
+                        carrito: carrito
+                    };
+
+                    fetch('/checkout', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            localStorage.removeItem('carrito');
+                            window.location.href = '/';
+                        } else {
+                            response.text().then(text => {
+                                alert('Error al procesar el pedido: ' + text);
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Error al realizar la petición:', err);
+                        alert('Error de conexión al procesar el pedido.');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

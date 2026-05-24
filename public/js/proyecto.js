@@ -1,436 +1,318 @@
+/**
+ * SCRIPT INTERACTIVO DE MI WEB (proyecto.js)
+ * 
+ * Acá manejo todo lo que pasa en el navegador del usuario:
+ * - Sumar y restar la cantidad de los productos en las tarjetas.
+ * - Guardar las cosas en el carrito usando el 'localStorage' para que no se borren.
+ * - Saber si el usuario inició sesión revisando las cookies desde JavaScript.
+ * - Crear y animar las alertas flotantes (toasts) de color naranja cuando agrega algo.
+ * - Dibujar el panel del carrito al lado derecho con el total de la compra y el botón de pagar.
+ */
 
-//LOGICA DE LOS BOTONES DE CANTIDAD DE PRODUCTO:
-let cantidad=0
+// ==========================================
+// 1. BOTONES PARA SUMAR Y RESTAR CANTIDADES
+// ==========================================
 
+// Variable para la tarjeta destacada principal
+let cantidad = 0;
+
+// Busco los elementos de la tarjeta principal por su ID único
 const botonSubir = document.getElementById('b-mas');
 const botonBajar = document.getElementById('b-menos');
 const mostrar = document.getElementById('cantidad');
 
-botonSubir.addEventListener('click', () =>{
-    cantidad++;
-    mostrar.textContent=cantidad;
-});
+// Al darle click al botón +, sumo 1 a mi variable y la muestro en la pantalla
+if (botonSubir && mostrar) {
+    botonSubir.addEventListener('click', () => {
+        cantidad++;
+        mostrar.textContent = cantidad;
+    });
+}
 
-botonBajar.addEventListener('click',() =>{
-    if (cantidad > 0){
-        cantidad--;
-        mostrar.textContent=cantidad;
+// Al darle click al botón -, resto 1 pero sin pasar de 0 para que no sea negativo
+if (botonBajar && mostrar) {
+    botonBajar.addEventListener('click', () => {
+        if (cantidad > 0) {
+            cantidad--;
+            mostrar.textContent = cantidad;
+        }
+    });
+}
+
+// Hago lo mismo para los productos del catálogo (uso querySelector en cada tarjeta para no confundirlos)
+document.querySelectorAll('.products-1-1').forEach(card => {
+    let cantidad2 = 0; // Cada tarjeta tiene su propio contador independiente
+
+    const botonSubir2 = card.querySelector('.b-mas-2');
+    const botonBajar2 = card.querySelector('.b-menos-2');
+    const mostrar2 = card.querySelector('.cantidad-2');
+
+    if (botonSubir2 && mostrar2) {
+        botonSubir2.addEventListener('click', () => {
+            cantidad2++;
+            mostrar2.textContent = cantidad2;
+        });
     }
-});
 
-let cantidad2 = 0
-
-const botonSubir2 = document.getElementById('b-mas-2');
-const botonBajar2 = document.getElementById('b-menos-2');
-const mostrar2 = document.getElementById('cantidad-2')
-
-botonSubir2.addEventListener('click',() =>{
-    cantidad2++;
-    mostrar2.textContent=cantidad2;
-});
-
-botonBajar2.addEventListener('click',() => {
-    if (cantidad2 > 0){
-        cantidad2--;
-        mostrar2.textContent=cantidad2;
-    }
-});
-
-let cantidad3 = 0
-
-const botonSubir3=document.getElementById('b-mas-3');
-const botonBajar3=document.getElementById('b-menos-3');
-const mostrar3=document.getElementById('cantidad-3');
-
-botonSubir3.addEventListener('click',() => {
-    cantidad3++;
-    mostrar3.textContent=cantidad3;
-});
-
-botonBajar3.addEventListener('click',() =>{
-    if(cantidad3 > 0){
-        cantidad3--;
-        mostrar3.textContent=cantidad3;
-    }
-});
-
-let cantidad4 = 0
-
-const botonSubir4=document.getElementById('b-mas-4');
-const botonBajar4=document.getElementById('b-menos-4');
-const mostrar4=document.getElementById('cantidad-4');
-
-botonSubir4.addEventListener('click',() =>{
-    cantidad4++;
-    mostrar4.textContent=cantidad4;
-});
-
-botonBajar4.addEventListener('click',() =>{
-    if(cantidad4 > 0){
-        cantidad4--;
-        mostrar4.textContent=cantidad4;
-    }
-});
-
-let cantidad5=0
-
-const botonSubir5=document.getElementById('b-mas-5');
-const botonBajar5=document.getElementById('b-menos-5');
-const mostrar5=document.getElementById('cantidad-5');
-
-botonSubir5.addEventListener('click',() =>{
-    cantidad5++;
-    mostrar5.textContent=cantidad5
-});
-
-botonBajar5.addEventListener('click',() =>{
-    if(cantidad5 > 0){
-        cantidad5--;
-        mostrar5.textContent=cantidad5;
-    }
-});
-
-let cantidad6=0
-
-const botonSubir6=document.getElementById('b-mas-6');
-const botonBajar6=document.getElementById('b-menos-6');
-const mostrar6=document.getElementById('cantidad-6');
-
-botonSubir6.addEventListener('click',() =>{
-    cantidad6++;
-    mostrar6.textContent=cantidad6;
-});
-
-botonBajar6.addEventListener('click',()=>{
-    if(cantidad6 > 0){
-        cantidad6--;
-        mostrar6.textContent=cantidad6;
-    }
-});
-
-let cantidad7=0
-
-const botonSubir7=document.getElementById('b-mas-7');
-const botonBajar7=document.getElementById('b-menos-7');
-const mostrar7=document.getElementById('cantidad-7');
-
-botonSubir7.addEventListener('click',() =>{
-    cantidad7++;
-    mostrar7.textContent=cantidad7;
-});
-
-botonBajar7.addEventListener('click',() =>{
-    if(cantidad7 > 0){
-        cantidad7--;
-        mostrar7.textContent=cantidad7;
-    }
-});
-
-let cantidad8=0
-
-const botonSubir8=document.getElementById('b-mas-8');
-const botonBajar8=document.getElementById('b-menos-8');
-const mostrar8=document.getElementById('cantidad-8');
-
-botonSubir8.addEventListener('click',()=>{
-    cantidad8++;
-    mostrar8.textContent=cantidad8;
-});
-
-botonBajar8.addEventListener('click',()=>{
-    if(cantidad8 > 0){
-        cantidad8--;
-        mostrar8.textContent=cantidad8;
-    }
-}); 
-
-let cantidad9=0
-
-const botonSubir9=document.getElementById('b-mas-9');
-const botonBajar9=document.getElementById('b-menos-9');
-const mostrar9=document.getElementById('cantidad-9');
-
-botonSubir9.addEventListener('click',()=>{
-    cantidad9++;
-    mostrar9.textContent=cantidad9;
-});
-
-botonBajar9.addEventListener('click',()=>{
-    if(cantidad9 > 0){
-        cantidad9--;
-        mostrar9.textContent=cantidad9;
+    if (botonBajar2 && mostrar2) {
+        botonBajar2.addEventListener('click', () => {
+            if (cantidad2 > 0) {
+                cantidad2--;
+                mostrar2.textContent = cantidad2;
+            }
+        });
     }
 });
 
 
-let cantidad10=0
+// ==========================================
+// 2. FUNCIÓN PARA SABER SI EL USUARIO ESTÁ LOGUEADO
+// ==========================================
 
-const botonSubir10=document.getElementById('b-mas-10');
-const botonBajar10=document.getElementById('b-menos-10');
-const mostrar10=document.getElementById('cantidad-10');
+// Busco si existe la cookie de sesión "user" en el navegador
+function usuarioLogueado() {
+    // Separo las cookies por ';' y reviso si alguna empieza con "user="
+    return document.cookie.split(';').some(item => item.trim().startsWith('user='));
+}
 
-botonSubir10.addEventListener('click',()=>{
-    cantidad10++;
-    mostrar10.textContent=cantidad10;
-});
 
-botonBajar10.addEventListener('click',()=>{
-    if(cantidad10 > 0){
-        cantidad10--;
-        mostrar10.textContent=cantidad10;
+// ==========================================
+// 3. PERSISTENCIA DE MI CARRITO DE COMPRAS
+// ==========================================
+
+// Traigo el carrito guardado en el navegador (localStorage) para que si se recarga la página no se borre
+// Si no hay nada guardado, inicio mi carrito como una lista vacía []
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+
+// ==========================================
+// 4. NOTIFICACIONES FLOTANTES BONITAS (TOASTS)
+// ==========================================
+
+// Creo mi propia alerta flotante naranja arriba a la derecha para no usar el alert feo de Windows
+function mostrarNotificacion(mensaje, tipo = 'exito') {
+    // Busco si ya existe el contenedor de alertas en la pantalla, si no, lo creo
+    let contenedor = document.getElementById('notificacion-container');
+    if (!contenedor) {
+        contenedor = document.createElement('div');
+        contenedor.id = 'notificacion-container';
+        // Le pongo estilos inline fijos para posicionarlo arriba a la derecha de forma flotante
+        contenedor.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        `;
+        document.body.appendChild(contenedor);
+    }
+
+    // Creo el cuadrito de la alerta
+    const notificacion = document.createElement('div');
+    // Color corporativo naranja para éxito y rojo para advertencias
+    const colorFondo = tipo === 'exito' ? '#ff6600' : '#d9534f';
+    
+    // Le doy un diseño bonito con bordes redondeados y sombra
+    notificacion.style.cssText = `
+        background-color: ${colorFondo};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 250px;
+        transform: translateX(120%); /* Inicia fuera de la pantalla a la derecha */
+        transition: transform 0.3s ease-in-out; /* Transición suave para el deslizamiento */
+    `;
+
+    // Emoji diferente según el tipo de mensaje
+    const icono = tipo === 'exito' ? '🛒' : '⚠️';
+    notificacion.innerHTML = `<span>${icono}</span> <span>${mensaje}</span>`;
+
+    // Meto mi alerta en el contenedor flotante
+    contenedor.appendChild(notificacion);
+
+    // Hago que entre deslizándose hacia adentro al instante
+    setTimeout(() => {
+        notificacion.style.transform = 'translateX(0)';
+    }, 10);
+
+    // A los 3 segundos la deslizo hacia afuera y luego la borro por completo del HTML
+    setTimeout(() => {
+        notificacion.style.transform = 'translateX(120%)';
+        setTimeout(() => {
+            notificacion.remove();
+        }, 300);
+    }, 3000);
+}
+
+
+// ==========================================
+// 5. EVENTO PARA AÑADIR PRODUCTOS AL CARRITO
+// ==========================================
+
+// En la página de inicio (Landing Page):
+document.querySelectorAll('.products-1').forEach(card => {
+    const btnCarrito = card.querySelector('.enviar-carrito');
+    if (btnCarrito) {
+        btnCarrito.addEventListener('click', () => {
+            // Verifico si el usuario inició sesión, si no, le muestro mi alerta roja y no le dejo agregar
+            if (!usuarioLogueado()) {
+                mostrarNotificacion('Debes iniciar sesión para añadir productos al carrito', 'error');
+                return;
+            }
+
+            // Saco el nombre, el precio y la cantidad de la tarjeta de producto
+            const nombre = card.querySelector('.Categoría-1')?.textContent;
+            const precio = card.querySelector('.precio-number')?.textContent;
+            const cantidadSeleccionada = parseInt(card.querySelector('#cantidad')?.textContent || '0');
+
+            if (cantidadSeleccionada > 0) {
+                // Meto el producto a mi lista de carrito
+                carrito.push({ nombre, precio, cantidad: cantidadSeleccionada });
+                // Guardo la lista en el localStorage de mi navegador
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                
+                mostrarNotificacion(`${nombre} x${cantidadSeleccionada} añadido al carrito`, 'exito');
+            } else {
+                mostrarNotificacion('Selecciona una cantidad primero', 'error');
+            }
+        });
     }
 });
 
-let cantidad11=0
+// En la página del catálogo:
+document.querySelectorAll('.products-1-1').forEach(card => {
+    const btnCarrito2 = card.querySelector('.enviar-carrito-2');
+    if (btnCarrito2) {
+        btnCarrito2.addEventListener('click', () => {
+            // Verifico sesión del lado del cliente
+            if (!usuarioLogueado()) {
+                mostrarNotificacion('Debes iniciar sesión para añadir productos al carrito', 'error');
+                return;
+            }
 
-const botonSubir11=document.getElementById('b-mas-11');
-const botonBajar11=document.getElementById('b-menos-11');
-const mostrar11=document.getElementById('cantidad-11');
+            const nombre = card.querySelector('.Categoría')?.textContent;
+            const precio = card.querySelector('.precio-number')?.textContent;
+            const cantidadSeleccionada2 = parseInt(card.querySelector('.cantidad-2')?.textContent || '0');
 
-botonSubir11.addEventListener('click',()=>{
-    cantidad11++;
-    mostrar11.textContent=cantidad11;
-});
-
-botonBajar11.addEventListener('click',()=>{
-    if(cantidad11 > 0){
-        cantidad11--;
-        mostrar11.textContent=cantidad11;
+            if (cantidadSeleccionada2 > 0) {
+                carrito.push({ nombre, precio, cantidad: cantidadSeleccionada2 });
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                mostrarNotificacion(`${nombre} x${cantidadSeleccionada2} añadido al carrito`, 'exito');
+            } else {
+                mostrarNotificacion('Selecciona una cantidad primero', 'error');
+            }
+        });
     }
 });
 
 
-let cantidad12=0
+// ==========================================
+// 6. PANEL FLOTANTE DEL CARRITO DE COMPRAS (SIDEBAR)
+// ==========================================
 
-const botonSubir12=document.getElementById('b-mas-12');
-const botonBajar12=document.getElementById('b-menos-12');
-const mostrar12=document.getElementById('cantidad-12');
+// Evento al dar click en el icono del carrito arriba en la barra de navegación
+const iconoCarrito = document.querySelector('.shop');
+if (iconoCarrito) {
+    iconoCarrito.addEventListener('click', () => mostrarCarrito());
+}
 
-botonSubir12.addEventListener('click',()=>{
-    cantidad12++;
-    mostrar12.textContent=cantidad12;
-});
-
-botonBajar12.addEventListener('click',()=>{
-    if(cantidad12 > 0){
-        cantidad12--;
-        mostrar12.textContent=cantidad12;
+// Función que crea y dibuja el panel de compras al lado derecho
+function mostrarCarrito() {
+    let modal = document.getElementById('modal-carrito');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'modal-carrito';
+        // Estilos fijos para que ocupe todo el alto a la derecha cubriendo la pantalla
+        modal.style.cssText = `
+            position: fixed; 
+            top: 0; 
+            right: 0; 
+            width: 350px; 
+            height: 100vh;
+            background: #1a1a1a; 
+            z-index: 9999; 
+            padding: 20px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5); 
+            overflow-y: auto;
+        `;
+        document.body.appendChild(modal);
     }
-});
 
-let cantidad13=0
+    // Cabecera del panel del carrito con botón de cierre
+    let html = `
+        <button onclick="document.getElementById('modal-carrito').remove()" 
+        style="float:right;background:none;border:none;color:white;font-size:20px;cursor:pointer">✕</button>
+        <h2 style="color:#ff6600">🛒 Carrito</h2>
+        <hr style="border-color:#333">`;
 
-const botonSubir13=document.getElementById('b-mas-13');
-const botonBajar13=document.getElementById('b-menos-13');
-const mostrar13=document.getElementById('cantidad-13');
-
-botonSubir13.addEventListener('click',()=>{
-    cantidad13++;
-    mostrar13.textContent=cantidad13;
-});
-
-botonBajar13.addEventListener('click',()=>{
-    if(cantidad13 > 0){
-        cantidad13--;
-        mostrar13.textContent=cantidad13;
+    // Si no tiene productos, muestro un mensaje
+    if (carrito.length === 0) {
+        html += `<p style="color:gray">El carrito está vacío</p>`;
+    } else {
+        // Recorro todos los productos del carrito y los pongo en la lista
+        carrito.forEach((item, i) => {
+            html += `
+            <div style="color:white;margin:10px 0;border-bottom:1px solid #333;padding-bottom:10px">
+                <b>${item.nombre}</b><br>
+                Cantidad: ${item.cantidad}<br>
+                Precio: ${item.precio}
+                <!-- Botón que borra el producto llamando a eliminarItem pasándole su índice -->
+                <button onclick="eliminarItem(${i})" 
+                style="background:#ff6600;border:none;color:white;padding:3px 8px;border-radius:5px;cursor:pointer;float:right">
+                Eliminar</button>
+            </div>`;
+        });
     }
-});
 
-let cantidad14=0
+    // CALCULO EL TOTAL GENERAL: Recorro los productos y les quito caracteres raros al precio para sumarlos (ej: de 'RD$350' a '350')
+    let total = carrito.reduce((acc, item) => {
+        let precio = parseInt(item.precio.replace(/[^0-9]/g, ''));
+        return acc + (precio * item.cantidad);
+    }, 0);
 
-const botonSubir14=document.getElementById('b-mas-14');
-const botonBajar14=document.getElementById('b-menos-14');
-const mostrar14=document.getElementById('cantidad-14');
+    // Pie de la tarjeta del carrito con total y botón para finalizar compra
+    html += `
+        <hr style="border-color:#333">
+        <p style="color:white;font-size:18px">Total: <b style="color:#ff6600">RD$${total}</b></p>
+        <button onclick="finalizarCompra()" 
+        style="width:100%;padding:12px;background:#ff6600;border:none;color:white;
+        border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px">
+        Finalizar compra</button>
+    `;
+    modal.innerHTML = html;
+}
 
-botonSubir14.addEventListener('click',()=>{
-    cantidad14++;
-    mostrar14.textContent=cantidad14;
-});
+// Función para eliminar un producto del carrito
+function eliminarItem(index) {
+    carrito.splice(index, 1); // Quito el producto de la lista
+    localStorage.setItem('carrito', JSON.stringify(carrito)); // Guardo el cambio en localStorage
+    mostrarCarrito(); // Vuelvo a dibujar el carrito
+}
 
-botonBajar14.addEventListener('click',()=>{
-    if( cantidad14 > 0){
-        cantidad14--;
-        mostrar14.textContent=cantidad14;
+// Función para ir a finalizar la compra
+function finalizarCompra() {
+    // Si no ha iniciado sesión, no le dejo ir a pagar y lo mando a loguearse
+    if (!usuarioLogueado()) {
+        alert('Debes iniciar sesión para poder finalizar tu compra.');
+        window.location.href = '/login';
+        return;
     }
-});
 
-let cantidad15=0
-
-const botonSubir15=document.getElementById('b-mas-15');
-const botonBajar15=document.getElementById('b-menos-15');
-const mostrar15=document.getElementById('cantidad-15');
-
-botonSubir15.addEventListener('click',()=>{
-    cantidad15++;
-    mostrar15.textContent=cantidad15;
-});
-
-botonBajar15.addEventListener('click',()=>{
-    if( cantidad15 > 0){
-        cantidad15--;
-        mostrar15.textContent=cantidad15;
+    // Si el carrito está vacío no avanzo
+    if (carrito.length === 0) {
+        alert('El carrito está vacío');
+        return;
     }
-});
-
-let cantidad16=0
-
-const botonSubir16=document.getElementById('b-mas-16');
-const botonBajar16=document.getElementById('b-menos-16');
-const mostrar16=document.getElementById('cantidad-16');
-
-botonSubir16.addEventListener('click',()=>{
-    cantidad16++;
-    mostrar16.textContent=cantidad16;
-});
-
-botonBajar16.addEventListener('click',()=>{
-    if( cantidad16 > 0){
-        cantidad16--;
-        mostrar16.textContent=cantidad16;
-    }
-});
-
-let cantidad17=0
-
-const botonSubir17=document.getElementById('b-mas-17');
-const botonBajar17=document.getElementById('b-menos-17');
-const mostrar17=document.getElementById('cantidad-17');
-
-botonSubir17.addEventListener('click',()=>{
-    cantidad17++;
-    mostrar17.textContent=cantidad17;
-});
-
-botonBajar17.addEventListener('click',()=>{
-    if( cantidad17 > 0){
-        cantidad17--;
-        mostrar17.textContent=cantidad17;
-    }
-});
-
-let cantidad18=0
-
-const botonSubir18=document.getElementById('b-mas-18');
-const botonBajar18=document.getElementById('b-menos-18');
-const mostrar18=document.getElementById('cantidad-18');
-
-botonSubir18.addEventListener('click',()=>{
-    cantidad18++;
-    mostrar18.textContent=cantidad18;
-});
-
-botonBajar18.addEventListener('click',()=>{
-    if( cantidad18 > 0){
-        cantidad18--;
-        mostrar18.textContent=cantidad18;
-    }
-});
-
-let cantidad19=0
-
-const botonSubir19=document.getElementById('b-mas-19');
-const botonBajar19=document.getElementById('b-menos-19');
-const mostrar19=document.getElementById('cantidad-19');
-
-botonSubir19.addEventListener('click',()=>{
-    cantidad19++;
-    mostrar19.textContent=cantidad19;
-});
-
-botonBajar19.addEventListener('click',()=>{
-    if( cantidad19 > 0){
-        cantidad19--;
-        mostrar19.textContent=cantidad19;
-    }
-});
-
-let cantidad20=0
-
-const botonSubir20=document.getElementById('b-mas-20');
-const botonBajar20=document.getElementById('b-menos-20');
-const mostrar20=document.getElementById('cantidad-20');
-
-botonSubir20.addEventListener('click',()=>{
-    cantidad20++;
-    mostrar20.textContent=cantidad20;
-});
-
-botonBajar20.addEventListener('click',()=>{
-    if( cantidad20 > 0){
-        cantidad20--;
-        mostrar20.textContent=cantidad20;
-    }
-});
-
-let cantidad21=0
-
-const botonSubir21=document.getElementById('b-mas-21');
-const botonBajar21=document.getElementById('b-menos-21');
-const mostrar21=document.getElementById('cantidad-21');
-
-botonSubir21.addEventListener('click',()=>{
-    cantidad21++;
-    mostrar21.textContent=cantidad21;
-});
-
-botonBajar21.addEventListener('click',()=>{
-    if( cantidad21 > 0){
-        cantidad21--;
-        mostrar21.textContent=cantidad21;
-    }
-});
-
-let cantidad22=0
-
-const botonSubir22=document.getElementById('b-mas-22');
-const botonBajar22=document.getElementById('b-menos-22');
-const mostrar22=document.getElementById('cantidad-22');
-
-botonSubir22.addEventListener('click',()=>{
-    cantidad22++;
-    mostrar22.textContent=cantidad22;
-});
-
-botonBajar22.addEventListener('click',()=>{
-    if( cantidad22 > 0){
-        cantidad22--;
-        mostrar22.textContent=cantidad22;
-    }
-});
-
-let cantidad23=0
-
-const botonSubir23=document.getElementById('b-mas-23');
-const botonBajar23=document.getElementById('b-menos-23');
-const mostrar23=document.getElementById('cantidad-23');
-
-botonSubir23.addEventListener('click',()=>{
-    cantidad23++;
-    mostrar23.textContent=cantidad23;
-});
-
-botonBajar23.addEventListener('click',()=>{
-    if( cantidad23 > 0){
-        cantidad23--;
-        mostrar23.textContent=cantidad23;
-    }
-});
-
-let cantidad24=0
-
-const botonSubir24=document.getElementById('b-mas-24');
-const botonBajar24=document.getElementById('b-menos-24');
-const mostrar24=document.getElementById('cantidad-24');
-
-botonSubir24.addEventListener('click',()=>{
-    cantidad24++;
-    mostrar24.textContent=cantidad24;
-});
-
-botonBajar24.addEventListener('click',()=>{
-    if( cantidad24 > 0){
-        cantidad24--;
-        mostrar24.textContent=cantidad24;
-    }
-});
-//LOGICA DE REGISTER_LOGIN USUARIO
+    
+    // Lo mando a mi página de checkout.hbs
+    window.location.href = '/checkout';
+}

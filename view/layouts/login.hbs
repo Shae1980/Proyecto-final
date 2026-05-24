@@ -1,37 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/css/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-</head>
-<body>
-    <script src="login.js"></script>
-    <form>
-        <h1>Login</h1>
-        <button>
-                <img class="google-icon" src="/public/img/Google_Icons.webp" >
-                <p>Continua con Google</p>
-        </button>
+{{>head}}
+    <!-- Envía las credenciales por POST a la ruta /login de mi servidor -->
+    <form action="/login" method="POST">
+        <h1 class="l">Login</h1>
+        <div>
+            <!-- nombre en req.body (lo dejo opcional para el login) -->
+            <input class="input-nombre" name="nombre" type="text" placeholder="Nombre">
+        </div>
+        
 
-        <div class="Or">
-            Or
+        <div>
+            <!-- email es la variable para el correo electrónico en req.body -->
+            <input class="input-email" name="email" type="email" placeholder="Correo Electronico" required></input>
         </div>
 
         <div>
-            <input class="input-email" type="email" placeholder="Correo Electronico o Nombre"></input>
+            <!-- password es la variable para la contraseña en req.body -->
+            <input class="input-password" name="password" type="password" placeholder="Password" required></input>
         </div>
 
         <div>
-            <input  class="input-submit" type="submit">
+            <!-- Botón para mandar las credenciales e iniciar sesión -->
+            <input class="input-submit" type="submit" value="Iniciar Sesión">
         </div>
+
+        <div>
+            <p class="p-2">¿No tienes una cuenta?<a href="/register"> Regístrate</a></p>
+        </div>
+
+        
     </form>
 </body>
 </html>

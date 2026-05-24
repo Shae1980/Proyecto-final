@@ -1,0 +1,66 @@
+{{!
+    BARRA DE NAVEGACIÓN DE MI WEB (navbar.hbs)
+    
+    Este partial es mi menú superior que se repite en todas las pantallas.
+    Usa Bootstrap para que tenga un botón de menú en celulares (hamburguesa).
+    También reviso la sesión con Handlebars para saber:
+    - Si inició sesión (el usuario existe), le pongo su nombre y el botón de Logout.
+    - Si no inició sesión, le muestro Register y Login para que entre a su cuenta.
+}}
+
+<div class="fondo">
+    <nav class="navbar navbar-expand-lg navbar-ferreteria">
+        <div class="container-fluid">
+
+            <!-- Logotipo de la ferretería que redirige al inicio al darle click -->
+            <a class="navbar-brand" href="/">
+                <img src="/img/logo-2.png" alt="AS Ferretería" id="logo">
+            </a>
+
+            <!-- Botón responsivo para celulares -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Opciones del menú colapsable -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hh">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogo-p">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Ubicación</a>
+                    </li>
+                </ul>
+
+                <!-- Icono de Carrito de compras que abre mi panel lateral -->
+                <div class="shop">
+                    <img src="/img/shop.png" alt="Icono Carrito">
+                </div>
+
+                <!-- SECCIÓN PARA MOSTRAR INICIO DE SESIÓN O LOGOUT -->
+                <div class="botones-nav">
+                    {{!
+                        Condición de Handlebars:
+                        Si la cookie de usuario existe, "user" tendrá datos y mostrará el bloque del if
+                    }}
+                    {{#if user}}
+                        <!-- Si ya tiene sesión, le pongo su nombre con el emoji y el botón para cerrar sesión -->
+                        <span class="user-nav" style="color: white; margin-right: 15px; font-weight: bold; vertical-align: middle;">👤 {{user.nombre}}</span>
+                        <a href="/logout" class="btn-nav">Cerrar sesión</a>
+                    {{else}}
+                        <!-- Si no ha iniciado sesión, le pongo sus botones de registrar y loguear -->
+                        <a href="/register" class="btn-nav">Register</a>
+                        <a href="/login" class="btn-nav">Login</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,8 +1,9 @@
-body{
+body {
     background-color: #fff;
-    
+
 }
-form{
+
+form {
     width: 379px;
     height: 500px;
     background-color: #223F61;
@@ -16,48 +17,36 @@ form{
     position: absolute;
     margin-left: 35%;
 }
-h1{
-    font-family:'Montserrat', sans-serif;
+
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 43px;
     color: #ff5f00;
 }
-.google-icon{
-    height: 38px;
-    width: 38px;
-    
-    
-}
-button{
-    
+
+button {
+
     margin-top: 60px;
     width: 88%;
     margin-left: 20px;
-    font-family: 'montserrat',sans-serif;
+    font-family: 'montserrat', sans-serif;
     border-radius: 16px;
     color: #000;
     background-color: #fff;
-    display:flex;
+    display: flex;
     border: none;
-    
-}
-p{
-    margin-top:10px ;
-    margin-left: 20px;
-    
-}
-.Or{
-    margin-top: 40px;
-    margin-left: 48%;
-    font-family:'Montserrat', sans-serif;
-    color: #fff;
+
 }
 
-.input-email{
+
+.input-email {
     width: 88%;
     display: flex;
     margin-top: 40px;
-    font-family: 'montserrat',sans-serif;
+    font-family: 'montserrat', sans-serif;
     border-radius: 16px;
     color: #000;
     background-color: #fff;
@@ -65,17 +54,16 @@ p{
     height: 44px;
     text-align: center;
     border: none;
-    
+
 }
-.input-submit{
+
+.input-submit {
     margin-top: 65px;
     margin-left: 26%;
     width: 163px;
     height: 44px;
-    border-radius:16px ;
-    background-color:#ff5f00 ;
+    border-radius: 16px;
+    background-color: #ff5f00;
     color: #000;
     border: none;
 }
-
-

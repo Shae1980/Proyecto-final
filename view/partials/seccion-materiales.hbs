@@ -1,0 +1,76 @@
+{{!
+    SECCIÓN DE MATERIALES DE CONSTRUCCIÓN (seccion-materiales.hbs)
+    
+    Esta sección es para mostrarle al cliente que vendo materiales pesados (blocks, varillas, etc).
+    Uso la rejilla col de Bootstrap para acomodar las tarjetas de manera responsiva.
+    Pongo un botón directo enlazado con la API de WhatsApp para que puedan cotizar directo desde el chat.
+}}
+
+{{>head}}
+
+<section class="seccion-materiales">
+    <h2 class="titulo-materiales">¿Necesitas materiales de construcción?</h2>
+    <p class="subtitulo-materiales">Contamos con una amplia variedad de materiales para tu proyecto</p>
+
+    <!-- Contenedor responsivo para las tarjetas -->
+    <div class="container">
+        <!-- Fila centrada con espaciado g-3 de Bootstrap -->
+        <div class="row g-3 justify-content-center">
+
+            <!-- Tarjeta 1: Block -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>🧱</span>
+                    <p>Block</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Varilla -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>🏗️</span>
+                    <p>Varilla</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Cemento -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>🪣</span>
+                    <p>Cemento</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Pintura -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>🎨</span>
+                    <p>Pintura</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5: Arena -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>🪨</span>
+                    <p>Arena</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6: Gravilla -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card-material">
+                    <span>⚙️</span>
+                    <p>Gravilla</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Botón directo de cotización que abre el chat de WhatsApp Business en otra pestaña -->
+    <a href="https://wa.me/18293250574" target="_blank" class="btn-whatsapp">
+        💬 Cotizar por WhatsApp
+    </a>
+
+</section>

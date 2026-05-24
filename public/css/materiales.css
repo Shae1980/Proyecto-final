@@ -1,0 +1,58 @@
+.seccion-materiales {
+    background-color: #1a1f1e;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.titulo-materiales {
+    color: #FF5F00;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo-materiales {
+    color: #d9d9d9;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.card-material {
+    background-color: #2a2f2e;
+    border-radius: 15px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s;
+}
+
+.card-material:hover {
+    transform: scale(1.05);
+}
+
+.card-material span {
+    font-size: 2rem;
+}
+
+.card-material p {
+    color: #d9d9d9;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 40px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    color: white;
+}
