@@ -1,0 +1,65 @@
+.checkout-body {
+    background-color: #1a1f1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.checkout-form {
+    background-color: #2a2f2e;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.checkout-titulo {
+    color: #FF5F00;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.input-1,
+.input-apellido,
+.input-2,
+.input-3,
+.input-4,
+.input-5,
+.input-6 {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1f1e;
+    border: 1px solid #FF5F00;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.input-6 option {
+    background-color: #1a1f1e;
+}
+
+::placeholder {
+    color: #888;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #FF5F00;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #cc4d00;
+}

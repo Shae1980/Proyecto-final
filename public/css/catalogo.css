@@ -1,0 +1,61 @@
+.products-1-1{
+    width: 300px;
+    max-width: 280px;
+    height: 390px;
+    background-color: transparent;
+    margin-top: 120px;
+    margin-left: 0px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+@media(max-width:500px){
+    .products-1-1{
+        margin-left: 32px;
+    }
+}
+@media(max-width:440px){
+    .products-1{
+        margin-left:14% ;
+    }
+    .products-1-1{
+        margin-left: 14%;
+    }
+}
+.cantidad-3 {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 238px;
+    margin-top: 236px;
+    position: absolute;
+}
+.b-mas-3{
+    width: 30px;
+    height: 17px;
+    background-color: #00576A;
+    margin-left: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-left: auto;
+    margin-top: 215px;
+}
+.b-menos-3{
+    width: 30px;
+    height: 17px;
+    background-color: #00576A;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-top: 36px;
+    margin-left: auto;
+
+}

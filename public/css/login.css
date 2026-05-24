@@ -2,22 +2,24 @@ body{
     background-color: #fff;
 }
 form{
-    width: 379px;
-    height: 500px;
-    background-color: #223F61;
-    margin: auto;
-    margin-top: 160px;
+    width: 360px;
+    height: 490px;
+    background-color: transparent;
     border-radius: 20px;
     box-sizing: border-box;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
     padding: 12PX;
     transition: all 2s ease;
+    margin-left: 40%;
+    margin-top: 7%;
 }
-h1{
+
+.l{
     font-family:'Montserrat', sans-serif;
     text-align: center;
     font-size: 43px;
     color: #ff5f00;
+    margin-top: 10px;
 }
 .google-icon{
     height: 38px;
@@ -25,29 +27,37 @@ h1{
     
     
 }
-button{
-    
-    margin-top: 60px;
+.p{
+    margin-bottom: 0;
+}
+.input-nombre{
     width: 88%;
-    margin-left: 20px;
+    display: flex;
+    margin-top: 40px;
     font-family: 'montserrat',sans-serif;
-    border-radius: 16px;
-    color: #000;
+    border-radius: 12px;
+    color: #fff;
     background-color: #fff;
-    display:flex;
+    margin-left: 20px;
+    height: 35px;
+    color: #000;
+    text-align: center;
     border: none;
 }
-p{
-    margin-top:10px ;
-    margin-left: 20px;
-    
-}
-.Or{
+
+.input-password{
+    width: 88%;
+    display: flex;
     margin-top: 40px;
-    margin-left: 48%;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'montserrat',sans-serif;
+    border-radius: 12px;
     color: #fff;
-    
+    background-color: #fff;
+    margin-left: 20px;
+    height: 35px;
+    color: #000;
+    text-align: center;
+    border: none;
 }
 
 .input-email{
@@ -55,17 +65,17 @@ p{
     display: flex;
     margin-top: 40px;
     font-family: 'montserrat',sans-serif;
-    border-radius: 16px;
+    border-radius: 12px;
     color: #fff;
     background-color: #fff;
     margin-left: 20px;
-    height: 42px;
+    height: 35px;
     color: #000;
     text-align: center;
     border: none;
 }
 .input-submit{
-    margin-top: 65px;
+    margin-top: 50px;
     margin-left: 26%;
     width: 163px;
     height: 44px;
@@ -73,4 +83,47 @@ p{
     background-color:#ff5f00 ;
     color: #fff;
     border: none;
+}
+.p-2{
+    margin-top: 5px;
+    margin-left: 50px;
+    color: #fff;
+}
+a{
+    margin-left: 5px;
+}
+
+/* =======================================================
+   ESTILOS DE MI LOGIN EN CELULARES (RESPONSIVO)
+   Se activa de forma automática cuando el ancho de pantalla
+   mide menos de 768px para que no se corte en teléfonos.
+   ======================================================= */
+@media (max-width: 768px) {
+    form {
+        margin: 80px auto 30px auto; /* Centrado automático: 80px arriba y centrado a los lados */
+        width: 90%; /* Ocupa el 90% del ancho de la pantalla del celular */
+        max-width: 340px; /* Ancho máximo en celulares pequeños */
+        height: auto; /* Altura adaptable al contenido */
+        padding-bottom: 25px; /* Un poco de espacio al final del formulario */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Centramos el botón de iniciar sesión en móviles */
+    .input-submit {
+        margin-left: 20%; 
+        width: 60%;
+    }
+
+    /* Alineamos mejor el texto del pie en móviles */
+    .p-2 {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    /* Ajustamos el tamaño del título */
+    .l {
+        font-size: 35px;
+        margin-top: 15px;
+    }
 }
